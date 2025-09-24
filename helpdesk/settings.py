@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import sys
+import os
 from pathlib import Path
 from decouple import config
 
@@ -28,9 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Adiciona a pasta 'apps' ao PYTHONPATH
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usuarios.apps.UsuariosConfig',
+    'chamados.apps.ChamadosConfig',
 ]
 
 MIDDLEWARE = [
@@ -99,13 +103,21 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Definindo Argon2 como padrão
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "pt-br"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
 
