@@ -1,7 +1,6 @@
 # Helpdesk – Sistema de Chamados
 
-Sistema de chamados (Helpdesk) desenvolvido em **Django** para gerenciamento de solicitações de suporte e sustentação de aplicação crítica.  
-O projeto foi construído com foco em **escalabilidade, automação e segurança**.
+Sistema de chamados (Helpdesk) desenvolvido em **Django** para gerenciamento de solicitações de suporte e sustentação de aplicação crítica. O projeto foi construído com foco em **escalabilidade, automação e segurança**.
 
 ### 🚀 Tecnologias Utilizadas
 
