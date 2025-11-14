@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'chamados.apps.ChamadosConfig',
 ]
 
+LOGIN_URL = "auth/login/" # Definindo a URL de login
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
